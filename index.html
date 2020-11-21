@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<body>
+    
+    <h1>
+    Hi,
+
+    </h1>
+    <h1>  
+      What Are You Doing?
+    </h1>
+    <button>
+        Button!
+        <script>
+           
+        </script>
+    </button>
+    <button>
+        Button 2!
+    </button>
+    
+    <script> 
+    const button = document.createElement("button")
+    button.innerText = "Button!"
+    document.body.appendChild(button)
+    function clicked() {
+        console.log("Mouse Clicked")
+        
+    }
+    // When The Mouse Is Clicked
+    button.addEventListener("click",clicked)
+    // When The Mouse Wheel Is Spinning
+    addEventListener("wheel",function() {
+        console.log("Wheel")
+
+    })
+    let Var = 19
+    if (Var === 11) {
+        console.log("Test")
+    }
+    </script>
+    <script>
+        const txt = document.createElement("textarea")
+        txt.innerText = "Create A Text"
+        document.body.appendChild(txt)
+
+        const PrintButton = document.createElement("button")
+        PrintButton.innerText = "Print your text"
+        document.body.appendChild(PrintButton)
+        PrintButton.addEventListener("click",function() {
+            console.log(txt.textContent)
+        })
+    </script>
+</body>
+
+</html>
