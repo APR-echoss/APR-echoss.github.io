@@ -1,93 +1,12 @@
 <!DOCTYPE html>
 <html>
+    <p>
+        PLEASE READ: Your Account Won't Be Stored Because Account System Still Isn't Finish!
+        <br> You Can Always Login If You Don't Refresh This Page Or Close This Tab!
+    </p>
+    <title>Account</title>
     <body>
-        <script>
-             let Users = []
-            let Usertaken = false
-            let loggedin = false
-            let InvaildLogin = false
-            if (loggedin === false) {
-                const User = document.createElement("textarea")
-                const Password = document.createElement("textarea")
-                const TxtStatus = document.createElement("h1")
-                const loggedout = document.createElement("button")
-                const login = document.createElement("button")
-                login.innerText = "Log in"
-                loggedout.innerText = "Log out"
-                TxtStatus.innerText = "Username Already In Used"
-                User.innerText = "Username"
-                Password.innerText = "Password"
-                document.body.appendChild(User)
-                document.body.appendChild(Password)
-                document.body.appendChild(login)
-
-                const signup = document.createElement("button")
-                signup.innerText = "Sign Up"
-                document.body.appendChild(signup)
-                login.addEventListener("click",function() {
-                    for (var count = 0; count < Users.length; count++) {
-                        if (User.value === Users[count]) {
-                            if (Password.value === Users[count + 1]) {
-                                loggedin = true
-                                document.body.removeChild(User)
-                                document.body.removeChild(Password)
-                                document.body.removeChild(signup)
-                                document.body.removeChild(login)
-                    
-                                document.body.appendChild(loggedout)  
-                                document.body.removeChild(TxtStatus)
-                            }else{
-                                InvaildLogin = true
-                            }
-
-                        }
-                            
-                    }
-                    if (InvaildLogin === true) {
-                        alert('Incorrect Username Or Password')
-                        InvaildLogin = false
-                    }
-                })
-                signup.addEventListener("click", function() {
-                    for (var count = 0; count < Users.length; count++) {
-                        if (User.value === Users[count]) {
-                            Usertaken = true
-                            
-                        }
-                    }
-                    if (Usertaken) {
-                        document.body.appendChild(TxtStatus)
-                        TxtStatus.innerText = "Username Already In Used"
-
-                        Usertaken = false
-                    }else{
-                        Users.push(User.value)
-                        Users.push(Password.value)
-                        loggedin = true
-                        document.body.removeChild(User)
-                        document.body.removeChild(Password)
-                        document.body.removeChild(signup)
-                        document.body.appendChild(TxtStatus)
-                        document.body.removeChild(login)
-                        alert("Account Created")
-                        TxtStatus.innerText = "Account Created"
-                        console.log(Users)
-                        document.body.appendChild(loggedout)      
-                    }
-                })
-                loggedout.addEventListener("click",function() {
-                    loggedin = false
-                    document.body.appendChild(User)
-                    document.body.appendChild(Password)
-                    document.body.appendChild(signup)
-                    document.body.appendChild(login)
-                    TxtStatus.innerText = ""
-                    document.body.removeChild(loggedout)      
-
-
-                })
-
-            }
+        <script src="/Main.js">
         </script>
     </body>
 </html>
