@@ -1,11 +1,12 @@
-
+import UserModule from "./Modules.js"
 let Users = [
     {
 
         Username: "AProgramm_R",
         Pass: "AProgramm_RPass"
     }
-]
+] 
+
 
 let Usertaken = false
 let loggedin = false
@@ -55,13 +56,16 @@ if (loggedin === false) {
     signup.addEventListener("click", function() {
         for (var count = 0; count < Users.length; count++) {
             if (User.value === Users[count].Username) {
-                Usertaken = true
+                    Usertaken = true
+                
                 
             }
+            if (Password.value === User.value) {Usertaken = true}
+
         }
         if (Usertaken) {
             document.body.appendChild(TxtStatus)
-            TxtStatus.innerText = "Username Already In Used"
+            TxtStatus.innerText = "Username Already In Used Or User Cannot Be Same As The Password"
 
             Usertaken = false
         }else{
@@ -71,7 +75,8 @@ if (loggedin === false) {
                     Pass: Password.value
                 }
             )
-            
+            const NewUser = new UserModule(User.value,Password.value)
+            StoreAccounts(NewUser)
             loggedin = true
             document.body.removeChild(User)
             document.body.removeChild(Password)

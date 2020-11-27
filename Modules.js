@@ -1,5 +1,9 @@
-export default class User {
+export default class Users {
     constructor(Name, Pass) {
+        let User = {
+            Name: Name,
+            Pass: Pass
+        }
         this.Name = Name
         this.Pass = Pass
     }
@@ -7,6 +11,5 @@ export default class User {
 export function StoreAccounts(
     UsersTable
 ) {
-    const DataBase = require("DataBase.json")
-    DataBase.AccountBase = UsersTable
+    console.log(Users)
 }

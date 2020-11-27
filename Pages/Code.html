@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <h1>
+        Code Your JavaScript:
+    </h1>
+    <body>
+        <script>
+            const Script = document.createElement("textarea")
+            Script.style = "margin: 0px; height: 329px; width: 1075px;"
+            document.body.appendChild(Script)
+
+            const RunBtn = document.createElement("button")
+            RunBtn.innerText = "Run"
+            document.body.appendChild(RunBtn)
+
+            RunBtn.addEventListener("click", () => {
+                
+                Scripts = Script.value
+                const NewScript = document.createElement("script")
+                NewScript.innerText = Script.value
+                document.body.appendChild(NewScript)
+                setTimeout(StopScript,2)
+                function StopScript() {
+                    document.body.removeChild(NewScript)
+                }
+            })
+        </script>
+    </body>
+</html>
