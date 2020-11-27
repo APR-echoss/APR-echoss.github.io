@@ -3,6 +3,8 @@
     <h1>
         Code Your JavaScript:
     </h1>
+    <head><title>Code JavaScript</title></head>
+    <h1>Open Console: Ctrl+Shift+J Mac: Command+Option+J</h1>
     <body>
         <script>
             const Script = document.createElement("textarea")
@@ -15,15 +17,17 @@
 
             RunBtn.addEventListener("click", () => {
                 
-                Scripts = Script.value
                 const NewScript = document.createElement("script")
-                NewScript.innerText = Script.value
+                NewScript.text = Script.value
+                
                 document.body.appendChild(NewScript)
-                setTimeout(StopScript,2)
+        
                 function StopScript() {
                     document.body.removeChild(NewScript)
                 }
+                setTimeout(StopScript,2)
             })
         </script>
     </body>
+    
 </html>
