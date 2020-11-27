@@ -11,5 +11,5 @@ export default class Users {
 export function StoreAccounts(
     UsersTable
 ) {
-    console.log(Users)
+    
 }
