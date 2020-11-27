@@ -9,11 +9,10 @@
         <script>
             const Script = document.createElement("textarea")
             const h1 = document.createElement("h1")
-            h1.innerText = "Code Already Running!"
             const NewScript = document.createElement("script")
-            const StopBtn = document.createElement("button")
+
+            h1.innerText = "Code Already Running!"
             let running = false
-            StopBtn.innerText = "Stop"
             Script.style = "margin: 0px; height: 329px; width: 1075px;"
             document.body.appendChild(Script)
 
@@ -22,30 +21,13 @@
             document.body.appendChild(RunBtn)
 
             RunBtn.addEventListener("click", () => {
-                if (running === false) {
-                    NewScript.text = Script.value
-                
-                    document.body.appendChild(NewScript)
-        
-                    document.body.appendChild(StopBtn)
-                    running = true
-                }else{
-                    document.body.appendChild(h1)
+                const NewScript = document.createElement("script")
 
-                }
-           
-                
+                NewScript.text = Script.value
+
+                document.body.appendChild(NewScript)
             })
-            StopBtn.addEventListener("click", () => {
-                document.body.removeChild(NewScript)
-                
-
-                running =false
-                document.body.removeChild(StopBtn)
-
-                document.body.removeChild(h1)
-
-            })
+            
 
 
         </script>
