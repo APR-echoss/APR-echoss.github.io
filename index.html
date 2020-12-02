@@ -61,7 +61,11 @@
                 {
 
                     Username: "AProgramm_R",
-                    Pass: "AProgramm_RPass"
+                    Pass: "AProgramm_RPass",
+                    Data: {
+                        Verified: true,
+                        Admin: true
+                    }
                 }
             ] 
 
@@ -99,6 +103,9 @@
                     
                                 document.body.appendChild(loggedout)  
                                 document.body.removeChild(TxtStatus)
+                                if (Users[count].Data.Verified) {
+                                    alert("Welcome, This Is A Verified Account!")
+                                }
                             }else{
                                 InvaildLogin = true
                             }
@@ -130,7 +137,11 @@
                         Users.push(
                             {
                                 Username: User.value,
-                                Pass: Password.value
+                                Pass: Password.value,
+                                Data: {
+                                    Verified: false,
+                                    Admin: false
+                                }
                             }
                         )
                         const NewUser = new UserModule(User.value,Password.value)
